@@ -4,7 +4,9 @@ class Sidebar extends Component {
 
   render() {
     return (
-      <h4>ANDRE THE GIANT HAS A POSSE</h4>
+      <div className="sidebar">
+        <h4>ANDRE THE GIANT HAS A POSSE</h4>
+      </div>
     );
   }
 }

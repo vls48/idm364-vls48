@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { HashRouter as Router } from 'react-router-dom';
 import App from './App';
-import Header from './components/Header';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render( 
-    <React.Fragment>
-        <Header />
-        <App />
-    </React.Fragment>,
+    <Router basename={process.env.PUBLIC_URL}>
+        <div className="content">
+            <App />
+        </div>
+    </Router>,
   document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

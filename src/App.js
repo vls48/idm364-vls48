@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import signs from './js/signs.js';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import base from './js/base';
+import Header from './components/Header';
 import Main from './components/Main';
-import Admin from './components/Admin';
 import AdminArea from './components/AdminArea';
-import Listing from './components/Listing';
 import NotFound from './components/NotFound';
 
 class App extends Component {
 
   state = {
     signs: []
-  }
+  };
 
   componentDidMount() {
-   /* this.ref = base.syncState('signs', {
+    this.ref = base.syncState('signs', {
       context: this,
       state: 'signs'
-    });*/
-    this.loadSigns()
+    });
   }
 
   loadSigns = () => {
+    console.log("it work")
     this.setState({ signs });
   };
 
@@ -41,35 +41,26 @@ class App extends Component {
 
   render(){
     return (
-      <Router>
+      <React.Fragment>   
+        <Header />
+
         <div className="App">
-        <div>
-            <ul className="signs">
-                {Object.keys(this.state.signs).map(key => (
-                    <Listing 
-                        key={key}
-                        details={this.state.signs[key]} 
-                    />
-                ))}
-            </ul>
+          <Switch>
+            <Route exact path="/" render={(props) => <Main
+              signs={this.state.signs}            
+            />} />
+            <Route path="/admin" render={(props) => <AdminArea
+                loadSigns={this.loadSigns}
+                updateSign={this.updateSign}
+                deleteSign={this.deleteSign}
+                signs={this.state.signs}
+              />} />
+            <Route component={NotFound} />
+          </Switch>
         </div>
-        <section className="admin">
-            <AdminArea
-              updateSign={this.updateSign}
-              deleteSign={this.deleteSign}
-              signs={this.state.signs}
-            />
-          </section>
-        </div>
-      </Router>
+        </React.Fragment>
     );
   }
 }
 
 export default App;
-
-/*<Switch>
-    <Route exact path="/" component={Main} />
-    <Route path="/admin" component={Admin} />
-    <Route component={NotFound} />
-</Switch>*/
