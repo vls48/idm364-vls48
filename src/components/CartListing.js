@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 
-class Listing extends Component {
+class CartListing extends Component {
 
-  addToCart = (event) => {
+  remove = (event) => {
     console.log(event.currentTarget.value);
-    this.props.add(event.currentTarget.value)
   };
 
   render() {
     const { image, name, desc, status } = this.props.details;
     return (
-      <div className="listing"> 
+      <div className="cartlisting"> 
         <li key="this.props.key" className={status}>
-          <img src={image} alt={name} />
           <h2>{name}</h2>
           <p>{desc}</p>
-          <button type="button" value={this.props.index} onClick={this.addToCart}> add to cart</button>
+          <button type="button" value={this.props.index} onClick={this.remove}> add to cart</button>
         </li>
       </div>
     );
   }
 }
 
-export default Listing;
+export default CartListing;

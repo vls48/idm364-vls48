@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   loadSigns = () => {
-    console.log("it work")
+    console.log("it work");
     this.setState({ signs });
   };
 
@@ -47,7 +47,7 @@ class App extends Component {
         <div className="App">
           <Switch>
             <Route exact path="/" render={(props) => <Main
-              signs={this.state.signs}            
+              signs={this.state.signs}           
             />} />
             <Route path="/admin" render={(props) => <AdminArea
                 loadSigns={this.loadSigns}

@@ -4,16 +4,24 @@ import Sidebar from './Sidebar';
 
 class Main extends Component {
 
+    add = (key) => {   
+            console.log({key});
+    };
+
     render(){
         return(
         <React.Fragment>
-            <Sidebar />
+            <Sidebar 
+                signs={this.props.signs}
+            />
             <div className="listingArea"> 
                 <ul className="signs">
                     {Object.keys(this.props.signs).map(key => (
                         <Listing 
                             key={key}
-                            details={this.props.signs[key]} 
+                            index={key}
+                            add={this.add} 
+                            details={this.props.signs[key]}
                         />
                     ))}
                 </ul>

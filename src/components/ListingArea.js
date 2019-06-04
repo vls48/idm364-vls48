@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Listing from './Listing';
 
 class ListingArea extends Component {
+
     render() {
         return (       
         <div>
@@ -9,6 +10,7 @@ class ListingArea extends Component {
                 {Object.keys(this.props.signs).map(key => (
                     <Listing 
                         key={key}
+                        index={key}
                         details={this.state.signs[key]} 
                     />
                 ))}
