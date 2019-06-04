@@ -27,7 +27,7 @@ header h1::after {
 }
 
 .content {
-  background-image: url('');
+  background-image: url('/img/obey.jpg');
   background-attachment: fixed;
   background-repeat: repeat;
   background-size: 150px 200px;

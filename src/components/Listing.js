@@ -14,6 +14,7 @@ class Listing extends Component {
         <li key="this.props.key" className={status}>
           <img src={image} alt={name} />
           <h2>{name}</h2>
+          <h3>{status}</h3>
           <p>{desc}</p>
           <button type="button" value={this.props.index} onClick={this.addToCart}> add to cart</button>
         </li>

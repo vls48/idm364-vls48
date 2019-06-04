@@ -58,7 +58,7 @@ class App extends Component {
             <Route component={NotFound} />
           </Switch>
         </div>
-        </React.Fragment>
+      </React.Fragment>
     );
   }
 }

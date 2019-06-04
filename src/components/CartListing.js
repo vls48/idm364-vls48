@@ -10,10 +10,9 @@ class CartListing extends Component {
     const { image, name, desc, status } = this.props.details;
     return (
       <div className="cartlisting"> 
-        <li key="this.props.key" className={status}>
+        <li key={this.props.index} className={status}>
           <h2>{name}</h2>
-          <p>{desc}</p>
-          <button type="button" value={this.props.index} onClick={this.remove}> add to cart</button>
+          <button type="button" value={this.props.index} onClick={this.remove}> remove</button>
         </li>
       </div>
     );

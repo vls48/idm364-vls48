@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = () => (
+class Header extends Component {
+  state = {
+    isShowing: false
+  };
  
-  <header className="headerbar">
-     <Link to="/admin"><h1>Admin</h1> </Link>
-  </header>
-);
+  render(){
+    return (
+       <header className="headerbar">
+         <Link to="/admin"><h1>Admin</h1> </Link>
+       </header>
+    );
+  }
+}
 
 export default Header;

@@ -9,7 +9,7 @@ class CartArea extends Component {
                         <CartListing 
                             key={key} 
                             index={key} 
-                            sign={this.props.signs[key]}
+                            details={this.props.signs[key]}
                         />
                     ))}
                 </ul>
