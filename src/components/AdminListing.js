@@ -44,10 +44,20 @@ class AdminListing extends Component {
         </div>
         <div className="controlgroup">
           <textarea
+            name="price"
+            onChange={this.handleChange}
+            value={this.props.sign.price}
+          />
+        </div>
+        <div className="controlgroup">
+          <textarea
             name="desc"
             onChange={this.handleChange}
             value={this.props.sign.desc}
           />
+        </div>
+        <div className="controlgroup">
+          <button type="button"> remove listing </button> 
         </div>
       </div>
     );

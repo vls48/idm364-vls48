@@ -13,7 +13,7 @@ class AdminArea extends Component {
                             index={key} 
                             sign={this.props.signs[key]}
                             updateSign={this.props.updateSign}
-                            removeSign={this.props.removeSign}
+                            deleteSign={this.props.deleteSign}
                         />
                     ))}
                 </ul>

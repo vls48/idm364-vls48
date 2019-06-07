@@ -8,7 +8,8 @@ class Sidebar extends Component {
       <div className="sidebar">
         <h4>ANDRE THE GIANT HAS A POSSE</h4>
         <CartArea 
-          signs={this.props.signs}
+          list={this.props.list}
+          total={this.props.total}
         />
       </div>
     );

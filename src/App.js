@@ -10,7 +10,9 @@ import NotFound from './components/NotFound';
 class App extends Component {
 
   state = {
-    signs: []
+    signs: [],
+    list: [],
+    total: 0
   };
 
   componentDidMount() {
@@ -35,8 +37,18 @@ class App extends Component {
     this.setState({ signs });
   };
 
-  deleteSign = () => {
-    console.log('delete sign');
+  setTotal = (cost) => {
+    this.setState({total: this.state.total + cost });
+  }
+
+  addSign = (key, addSign) => {
+    // console.log('update sign');
+    // 1. copy the current state
+    const list = { ...this.state.list };
+    // 2. update that state key/value
+    list[key] = addSign;
+    // 3. set the new copy to the component state
+    this.setState({ list });
   };
 
   render(){
@@ -47,12 +59,15 @@ class App extends Component {
         <div className="App">
           <Switch>
             <Route exact path="/" render={(props) => <Main
-              signs={this.state.signs}           
+              signs={this.state.signs}
+              total={this.state.total}
+              list={this.state.list}
+              addSign={this.addSign} 
+              setTotal={this.setTotal}                      
             />} />
             <Route path="/admin" render={(props) => <AdminArea
                 loadSigns={this.loadSigns}
                 updateSign={this.updateSign}
-                deleteSign={this.deleteSign}
                 signs={this.state.signs}
               />} />
             <Route component={NotFound} />

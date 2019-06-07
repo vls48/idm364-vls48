@@ -4,10 +4,12 @@ import './index.css';
 import { HashRouter as Router } from 'react-router-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import obey from './img/obey.jpg'; 
 
 ReactDOM.render( 
     <Router basename={process.env.PUBLIC_URL}>
-        <div className="content">
+        <div className="content" style={{backgroundImage: `url(${obey})`}}>
+            {console.log('obey: ' + obey)}
             <App />
         </div>
     </Router>,

@@ -1,38 +1,44 @@
 const signs = {
 	sign1: {
 		name: 'france',
-		image: './img/france.jpg',
-		desc: 'Intelligent, adaptable, quick-witted, charming, artistic, sociable',
+		image: './france.jpg',
+		price: '35.00',
+		desc: 'Lorem ipsum lorem ipsum',
 		status: 'active'
 	},
 	sign2: {
-		name: 'ox',
-		image: './img/green.jpg',
-		desc: 'Loyal, reliable, thorough, strong, reasonable, steady, determined',
+		name: 'green',
+		image: './green.jpg',
+		price: '45.00',
+		desc: 'Lorem ipsum lorem ipsum',
 		status: 'active'
 	},
 	sign3: {
-		name: 'tiger',
-		image: './img/mujer.jpg',
-		desc: 'Enthusiastic, courageous, ambitious, leadership, confidence, charismatic',
+		name: 'mujer',
+		image: './mujer.jpg',
+		price: '35.00',
+		desc: 'Lorem ipsum lorem ipsum',
 		status: 'active'
 	},
 	sign4: {
-		name: 'rabbit',
-		image: './img/obey.jpg',
-		desc: 'Trustworthy, empathic, modest, diplomatic, sincere, sociable, caretakers, sensitive.',
+		name: 'obey',
+		image: './obey.jpg',
+		price: '45.00',
+		desc: 'Lorem ipsum lorem ipsum',
 		status: 'active'
 	},
 	sign5: {
-		name: 'dragon',
-		image: './img/three.jpg',
-		desc: 'Lucky, flexible, eccentric, imaginative, artistic, spiritual, charismatic',
+		name: 'three obey',
+		image: './three.jpg',
+		price: '35.00',
+		desc: 'Lorem ipsum lorem ipsum',
 		status: 'active'
 	},
 	sign6: {
-		name: 'snake',
-		image: './img/war.jpg',
-		desc: 'Philosophical, organized, intelligent, intuitive, elegant, attentive, decisive',
+		name: 'make art not war',
+		image: './war.jpg',
+		price: '45.00',
+		desc: 'Lorem ipsum lorem ipsum',
 		status: 'active'
 	}
 }

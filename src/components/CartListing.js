@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { formatPrice } from '../js/utilities';
 
 class CartListing extends Component {
 
@@ -7,14 +8,17 @@ class CartListing extends Component {
   };
 
   render() {
-    const { image, name, desc, status } = this.props.details;
+    const { name, price, count } = this.props.details;
     return (
-      <div className="cartlisting"> 
-        <li key={this.props.index} className={status}>
-          <h2>{name}</h2>
-          <button type="button" value={this.props.index} onClick={this.remove}> remove</button>
-        </li>
-      </div>
+        <div className="cartlisting"> 
+          <li key={this.props.index} >
+            <h2>{name}</h2>
+            <h2>{formatPrice(price)}</h2>
+            <h2>{count}</h2>
+            <button type="button" value={this.props.index} onClick={this.remove}> remove</button>
+          </li>
+        </div>
+
     );
   }
 }

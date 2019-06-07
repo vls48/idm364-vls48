@@ -4,15 +4,12 @@ import Sidebar from './Sidebar';
 
 class Main extends Component {
 
-    add = (key) => {   
-            console.log({key});
-    };
-
     render(){
         return(
         <React.Fragment>
             <Sidebar 
-                signs={this.props.signs}
+                list={this.props.list}
+                total={this.props.total}
             />
             <div className="listingArea"> 
                 <ul className="signs">
@@ -20,8 +17,9 @@ class Main extends Component {
                         <Listing 
                             key={key}
                             index={key}
-                            add={this.add} 
                             details={this.props.signs[key]}
+                            addSign={this.props.addSign}
+                            setTotal={this.props.setTotal}
                         />
                     ))}
                 </ul>
