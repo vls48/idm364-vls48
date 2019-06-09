@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import AdminListing from './AdminListing';
+import { ResetButton } from './styles/ButtonStyles';
 
 class AdminArea extends Component {
     render() {
         return ( 
             <React.Fragment>
-                <button type="button" onClick={this.props.loadSigns}> reload </button>
+                <h1 className="adminTitle">The Control Panel</h1>
+                <ResetButton type="button" onClick={this.props.loadSigns}> Reload </ResetButton>
                 <ul>
                     {Object.keys(this.props.signs).map(key => (
                         <AdminListing 

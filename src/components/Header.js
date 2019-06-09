@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import HeaderStyled from './styles/HeaderStyles';
 
 class Header extends Component {
   state = {
@@ -18,9 +19,12 @@ class Header extends Component {
 
   render(){
     return (
-       <header className="headerbar">
-         <Link to={this.state.isShowing ? '/' : '/admin'} onClick={this.handleClick}><h1>Admin {this.state.isShowing ? '▲' : '▼'}</h1> </Link>
-       </header>
+      <>
+        <HeaderStyled fullheight={this.state.isShowing ? '' : 'fullheight'} className="headerbar">
+          <Link to={this.state.isShowing ? '/' : '/admin'} onClick={this.handleClick}><h1>Admin {this.state.isShowing ? '▲' : '▼'}</h1> </Link>
+        </HeaderStyled>
+        <div className="box"></div>
+       </>
     );
   }
 }

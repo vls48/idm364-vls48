@@ -13,14 +13,6 @@ code {
     monospace;
 }
 
-header{
-  background-color: white;
-  color: grey;
-  font-size: 0.6rem;
-  padding-left: 15px;
-  
-}
-
 .content {
   /* background-image: url('/img/obey.jpg'); */
   background-attachment: fixed;
@@ -59,13 +51,17 @@ header{
 } 
 
 ul {
-  margin: 0px;
-  padding: 5px;
+  margin: 35px auto;
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
+  pointer-events: inherit;
 }
 
-h1{
-  margin-bottom: 0px;
+.adminTitle {
+  color: white;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  padding: 25px;
 }

@@ -47,18 +47,24 @@ class Listing extends Component {
     console.log(image)
     let removeFromCart;
     if (this.state.count > 0) {
-      removeFromCart = <AddToCartButton type="button" value={price} name={name} onClick={this.handleClickDecrement}> Remove from Cart</AddToCartButton>;
+      removeFromCart = <AddToCartButton type="button" value={price} name={name} onClick={this.handleClickDecrement}> REMOVE </AddToCartButton>;
     } else {
       removeFromCart = <div></div>;
     }
     return (
       <ListingStyle className="listing"> 
         <li key="this.props.key" className={status}>
-          <img src={image} alt={name} />
-          <AddToCartButton type="button" value={price} name={name} onClick={this.handleClickIncrement}> Add to Cart</AddToCartButton> {removeFromCart}
-          <h2>{name} {status}</h2>
-          <p>{formatPrice(price)}</p>
-          <p>{desc}</p>
+          <div className="overlaycont">
+            <img src={image} alt={name} /> 
+            <div className="gradient"></div>
+            <div className="infocont">
+              <h2 className="name">{name}</h2>
+              <h2 className="price">{formatPrice(price)}</h2>
+              <h2 className="status">{status}</h2>
+              <p>{desc}</p>  
+            </div>
+          </div>
+          <div className="buttonscont"><AddToCartButton white type="button" value={price} name={name} onClick={this.handleClickIncrement}> ADD TO CART</AddToCartButton> {removeFromCart} </div>
         </li>
       </ListingStyle>
     );
@@ -67,37 +73,82 @@ class Listing extends Component {
 
 const ListingStyle = styled.div`
   width: 32%;
-  margin: 5px;
+  margin: 0px 0px 40px 0px; 
   color: white;
-  li{
-    position: realitve;
-  }
-  li h2{
-    text-transform: uppercase;
-    margin: 5px 5px 5px 0px;
-    font-size: 1.3rem;
-  }
-  p {
-    color: white;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
+  .overlaycont{
+    position: relative;
+    width: 80%;
+    height: 100%;
+    display: inline-block;
   }
   button{
     margin: 5px;
   }
   img{
     background-color: red;
-    margin: 15px 15px 15px 0px;
-    width: 77%;
+    width: 100%;
     float: left;
     display: block;
     overflow: hidden;
     box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.87);
   }
-  &:hover p {
+  &:hover .infocont {
     visibility: visible;
     opacity: 1;
+  }
+  &:hover .gradient {
+    visibility: visible;
+    opacity: 1;
+  }
+  .infocont{
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    h2{
+      text-transform: uppercase;
+      margin: 0px 0px 0px 10px;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .name{
+      margin: 0px 0px 10px 10px;
+    }
+    .price{
+      font-weight: 400;
+      font-style: oblique;
+      font-size: 0.9rem;
+    }
+    .status {
+      font-size: 0.9rem;
+      font-weight: 400;
+      text-transform: capitalize;
+      color: rgba(255,255,255, 0.75);
+    }
+    p{
+      margin: 15px 10px 15px 10px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+  .gradient{
+    background-image: linear-gradient(rgb(255,0,0, 0.2), rgba(0,0,0,0.65), rgba(0,0,0,0.95));
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .buttonscont{
+    display: flex;
+    width: 80%;
+    padding-top: 10px;
+    justify-content: center;
   }
 `;
 
