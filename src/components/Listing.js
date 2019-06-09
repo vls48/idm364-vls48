@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { formatPrice } from '../js/utilities';
+import { AddToCartButton } from './styles/ButtonStyles';
+import styled from 'styled-components';
 
 class Listing extends Component {
 
@@ -43,20 +45,60 @@ class Listing extends Component {
   render() {
     const { image, name, price, status, desc } = this.props.details;
     console.log(image)
+    let removeFromCart;
+    if (this.state.count > 0) {
+      removeFromCart = <AddToCartButton type="button" value={price} name={name} onClick={this.handleClickDecrement}> Remove from Cart</AddToCartButton>;
+    } else {
+      removeFromCart = <div></div>;
+    }
     return (
-      <div className="listing"> 
+      <ListingStyle className="listing"> 
         <li key="this.props.key" className={status}>
           <img src={image} alt={name} />
-          <h2>{name}</h2>
-          <h3>{status}</h3>
+          <AddToCartButton type="button" value={price} name={name} onClick={this.handleClickIncrement}> Add to Cart</AddToCartButton> {removeFromCart}
+          <h2>{name} {status}</h2>
           <p>{formatPrice(price)}</p>
           <p>{desc}</p>
-          <button type="button" value={price} name={name} onClick={this.handleClickIncrement}> add to cart</button>
-          <button type="button" value={price} name={name} onClick={this.handleClickDecrement}> remove from cart</button>
         </li>
-      </div>
+      </ListingStyle>
     );
   }
 }
+
+const ListingStyle = styled.div`
+  width: 32%;
+  margin: 5px;
+  color: white;
+  li{
+    position: realitve;
+  }
+  li h2{
+    text-transform: uppercase;
+    margin: 5px 5px 5px 0px;
+    font-size: 1.3rem;
+  }
+  p {
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+  button{
+    margin: 5px;
+  }
+  img{
+    background-color: red;
+    margin: 15px 15px 15px 0px;
+    width: 77%;
+    float: left;
+    display: block;
+    overflow: hidden;
+    box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.87);
+  }
+  &:hover p {
+    visibility: visible;
+    opacity: 1;
+  }
+`;
 
 export default Listing;

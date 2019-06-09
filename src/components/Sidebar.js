@@ -10,6 +10,8 @@ class Sidebar extends Component {
         <CartArea 
           list={this.props.list}
           total={this.props.total}
+          addSign={this.props.addSign}
+          setTotal={this.props.setTotal}
         />
       </div>
     );

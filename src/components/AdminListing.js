@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { AdminButton } from './styles/ButtonStyles';
+import PropTypes from 'prop-types';
 
 class AdminListing extends Component {
   
@@ -57,11 +59,18 @@ class AdminListing extends Component {
           />
         </div>
         <div className="controlgroup">
-          <button type="button"> remove listing </button> 
+          <AdminButton type="button"> remove listing </AdminButton> 
         </div>
       </div>
     );
   }
 }
+
+AdminListing.propTypes = {
+  name: PropTypes.string,
+  desc: PropTypes.string,
+  price: PropTypes.number,
+  status: PropTypes.string
+};
 
 export default AdminListing;

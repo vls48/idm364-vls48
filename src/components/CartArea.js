@@ -28,6 +28,8 @@ class CartArea extends Component {
                                 key={key} 
                                 index={key} 
                                 details={this.props.list[key]}
+                                addSign={this.props.addSign}
+                                setTotal={this.props.setTotal}
                             />
                             );
                         } else {

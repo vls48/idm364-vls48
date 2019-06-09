@@ -10,6 +10,8 @@ class Main extends Component {
             <Sidebar 
                 list={this.props.list}
                 total={this.props.total}
+                addSign={this.props.addSign}
+                setTotal={this.props.setTotal}
             />
             <div className="listingArea"> 
                 <ul className="signs">

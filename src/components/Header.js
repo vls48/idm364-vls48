@@ -9,12 +9,13 @@ class Header extends Component {
   /*componentDidMount {
     do stuff in case the admin is the first view/is typed in to address
   }*/
- 
+
   handleClick = () => {
     this.setState({
       isShowing: !this.state.isShowing
     });
   } 
+
   render(){
     return (
        <header className="headerbar">
