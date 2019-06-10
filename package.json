@@ -2,7 +2,7 @@
   "name": "idm364",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vls48.github.io/idm364",
+  "homepage": "https://vls48.github.io/idm364-vls48",
   "dependencies": {
     "firebase": "^6.0.2",
     "gh-pages": "^2.0.1",
