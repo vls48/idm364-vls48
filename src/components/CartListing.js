@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { formatPrice } from '../js/utilities';
-import { AddToCartButton } from './styles/ButtonStyles';
+import { CartListingStyle } from './styles/ListingStyles';
 
 class CartListing extends Component {
 
@@ -11,13 +11,13 @@ class CartListing extends Component {
   render() {
     const { name, price, count } = this.props.details;
     return (
-        <div className="cartlisting"> 
+        <CartListingStyle> 
           <li key={this.props.index} >
-            <h2>{name}</h2>
-            <h2>{formatPrice(price)}</h2>
-            <h2>{count}</h2>
+            <h2 className="name">{name}</h2>
+            <h2 className="price">{formatPrice(price)}</h2>
+            <h2 className="amount">x{count}</h2>
           </li>
-        </div>
+        </CartListingStyle>
 
     );
   }

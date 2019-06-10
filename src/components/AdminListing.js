@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { AdminButton } from './styles/ButtonStyles';
+import { AdminListingStyle } from './styles/ListingStyles';
 import PropTypes from 'prop-types';
 
 class AdminListing extends Component {
@@ -21,47 +22,59 @@ class AdminListing extends Component {
     this.props.updateSign(this.props.index, updatedSign);
   };
 
+  deleteEntry = () => {
+    console.log("delete");
+    const deletedSign = null;
+    this.props.deleteSign(this.props.index, deletedSign);
+  }
+
   render() {
     return (
-      <div className="sign-edit">
-        <div className="controlgroup">
-          <label htmlFor="name">Name: </label>
-          <input
-            type="text"
-            name="name"
-            value={this.props.sign.name}
-            onChange={this.handleChange}
-          />
+      <AdminListingStyle className="sign-edit">
+        <img src={this.props.sign.image} alt={this.propsname} /> 
+        <div className="fields">
+          <div className="controlgroup">
+            <label htmlFor="name">Name: </label>
+            <input
+              type="text"
+              name="name"
+              value={this.props.sign.name}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="controlgroup">
+            <label htmlFor="status">Status</label>
+            <select
+              name="status"
+              onChange={this.handleChange}
+              value={this.props.sign.status}
+            >
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+          <div className="controlgroup">
+            <label htmlFor="price">Price: </label>
+            <input
+              type="text"
+              name="price"
+              onChange={this.handleChange}
+              value={this.props.sign.price}
+            />
+          </div>
+          <div className="controlgroup">
+            <label htmlFor="desc">Description: </label>
+            <textarea
+              name="desc"
+              onChange={this.handleChange}
+              value={this.props.sign.desc}
+            />
+          </div>
+          <div className="controlgroup">
+            <AdminButton type="button" onClick={this.deleteEntry}> remove listing </AdminButton> 
+          </div>
         </div>
-        <div className="controlgroup">
-          <label htmlFor="status">Status</label>
-          <select
-            name="status"
-            onChange={this.handleChange}
-            value={this.props.sign.status}
-          >
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
-          </select>
-        </div>
-        <div className="controlgroup">
-          <textarea
-            name="price"
-            onChange={this.handleChange}
-            value={this.props.sign.price}
-          />
-        </div>
-        <div className="controlgroup">
-          <textarea
-            name="desc"
-            onChange={this.handleChange}
-            value={this.props.sign.desc}
-          />
-        </div>
-        <div className="controlgroup">
-          <AdminButton type="button"> remove listing </AdminButton> 
-        </div>
-      </div>
+      </AdminListingStyle>
     );
   }
 }

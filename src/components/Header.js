@@ -22,8 +22,8 @@ class Header extends Component {
       <>
         <HeaderStyled fullheight={this.state.isShowing ? '' : 'fullheight'} className="headerbar">
           <Link to={this.state.isShowing ? '/' : '/admin'} onClick={this.handleClick}><h1>Admin {this.state.isShowing ? '▲' : '▼'}</h1> </Link>
+          <div className="box"></div>
         </HeaderStyled>
-        <div className="box"></div>
        </>
     );
   }

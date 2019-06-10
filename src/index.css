@@ -14,30 +14,13 @@ code {
 }
 
 .content {
-  /* background-image: url('/img/obey.jpg'); */
   background-attachment: fixed;
   background-repeat: repeat;
   background-size: 150px 200px;
   background-color: rgba(0, 0, 0, 0.85);
   background-blend-mode: darken;
-  height: 100vh;
-}
-
-.sidebar {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  height: 100vh;
-  width: 18%;
-  right: 0;
-  text-align: right;
-  padding-left: 25px;
-  padding-right: 25px;
-  position: fixed;
-}
-
-.sidebar h4 {
-  font-size: 3rem;
-  padding: 5px;
+  height: 110vh;
+  overflow-x: hidden;
 }
 
 .listingArea {
@@ -45,23 +28,28 @@ code {
   width: 80%;
   overflow-y: scroll;
   height: 100vh;
+  padding: 25px;
 }
 .listingArea::-webkit-scrollbar { 
   display: none; 
 } 
 
 ul {
-  margin: 35px auto;
+  margin: 25px auto;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   list-style-type: none;
-  pointer-events: inherit;
+  padding: 0;
 }
 
 .adminTitle {
-  color: white;
+  color: rgb(40,40,40);
   text-align: center;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  padding: 25px;
+  font-size: 2.6rem;
+  font-style: oblique;
+  padding-top: 0px;
+  margin-bottom: 10px;
 }

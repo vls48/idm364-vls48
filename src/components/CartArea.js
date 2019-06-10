@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CartListing from './CartListing';
 import { formatPrice } from '../js/utilities';
+import styled from 'styled-components';
 
 class CartArea extends Component {
 
@@ -16,7 +17,7 @@ class CartArea extends Component {
     render() {
         return ( 
             <React.Fragment>
-                <ul>
+                <ul style={{padding: 0}}>
                     {Object.keys(this.props.list).map(key => {
                         if (this.props.list[key].count > 0 ) {
 
@@ -37,12 +38,37 @@ class CartArea extends Component {
                         }
                     })}
                 </ul>
-                <div>
-                    <h2>Order Total: {formatPrice(this.props.total)}</h2>
-                </div>
+                <CartTotalStyled>
+                    <h2>Cart Total:</h2> <h2 className="cost"> {formatPrice(this.props.total)}</h2>
+                </CartTotalStyled>
             </React.Fragment>
         );
     }
 }
 
+const CartTotalStyled = styled.div`
+{
+    border-top: 0.2px solid red;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 90px;
+    width: 22%;
+    right: 0;
+    bottom: 0;
+    text-align: right;
+    position: fixed;
+    h2 {
+        display: inline-block;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-family: 'Roboto',sans-serif;
+        font-weight: 700;
+        padding-right: 10px;
+        color: rgba(255,255,255,0.8);
+    }
+    .cost{
+        color: white;
+        font-style: oblique;
+    }
+}
+`;
 export default CartArea;

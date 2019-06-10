@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import CartArea from './CartArea';
+import SidebarStyled from './styles/SidebarStyles';
 
 class Sidebar extends Component {
 
   render() {
     return (
-      <div className="sidebar">
+      <SidebarStyled>
         <h4>ANDRE THE GIANT HAS A POSSE</h4>
         <CartArea 
           list={this.props.list}
@@ -13,7 +14,7 @@ class Sidebar extends Component {
           addSign={this.props.addSign}
           setTotal={this.props.setTotal}
         />
-      </div>
+      </SidebarStyled>
     );
   }
 }

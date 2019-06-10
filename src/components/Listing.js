@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { formatPrice } from '../js/utilities';
 import { AddToCartButton } from './styles/ButtonStyles';
-import styled from 'styled-components';
+import { ListingStyle } from './styles/ListingStyles';
 
 class Listing extends Component {
 
@@ -70,86 +70,5 @@ class Listing extends Component {
     );
   }
 }
-
-const ListingStyle = styled.div`
-  width: 32%;
-  margin: 0px 0px 40px 0px; 
-  color: white;
-  .overlaycont{
-    position: relative;
-    width: 80%;
-    height: 100%;
-    display: inline-block;
-  }
-  button{
-    margin: 5px;
-  }
-  img{
-    background-color: red;
-    width: 100%;
-    float: left;
-    display: block;
-    overflow: hidden;
-    box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.87);
-  }
-  &:hover .infocont {
-    visibility: visible;
-    opacity: 1;
-  }
-  &:hover .gradient {
-    visibility: visible;
-    opacity: 1;
-  }
-  .infocont{
-    color: white;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
-    h2{
-      text-transform: uppercase;
-      margin: 0px 0px 0px 10px;
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-    .name{
-      margin: 0px 0px 10px 10px;
-    }
-    .price{
-      font-weight: 400;
-      font-style: oblique;
-      font-size: 0.9rem;
-    }
-    .status {
-      font-size: 0.9rem;
-      font-weight: 400;
-      text-transform: capitalize;
-      color: rgba(255,255,255, 0.75);
-    }
-    p{
-      margin: 15px 10px 15px 10px;
-      font-size: 1rem;
-      font-weight: 500;
-    }
-  }
-  .gradient{
-    background-image: linear-gradient(rgb(255,0,0, 0.2), rgba(0,0,0,0.65), rgba(0,0,0,0.95));
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-  .buttonscont{
-    display: flex;
-    width: 80%;
-    padding-top: 10px;
-    justify-content: center;
-  }
-`;
 
 export default Listing;

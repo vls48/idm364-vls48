@@ -37,6 +37,14 @@ class App extends Component {
     this.setState({ signs });
   };
 
+  deleteSign = (key, deletedSign) => {
+    const signs = { ...this.state.signs };
+    // 2. update that state key/value
+    signs[key] = deletedSign;
+    // 3. set the new copy to the component state
+    this.setState({ signs });
+  }
+
   setTotal = (cost) => {
     this.setState({total: this.state.total + cost });
   }
@@ -56,7 +64,7 @@ class App extends Component {
       <React.Fragment>   
         <Header />
 
-        <div className="App">
+        <div className="App" style={{position: "absolute"}}>
           <Switch>
             <Route exact path="/" render={(props) => <Main
               signs={this.state.signs}
@@ -69,6 +77,7 @@ class App extends Component {
                 loadSigns={this.loadSigns}
                 updateSign={this.updateSign}
                 signs={this.state.signs}
+                deleteSign={this.deleteSign}
               />} />
             <Route component={NotFound} />
           </Switch>

@@ -3,9 +3,10 @@ import styled from 'styled-components';
 const AdminButton = styled.button`
   background-color: white;
   color: ${props => (props.color ? 'white' : 'grey')};
-  span {
-    font-size: 200%;
-  }
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  margin-top: 5px;
 `;
 
 const AddToCartButton = styled.button`
@@ -22,16 +23,19 @@ const AddToCartButton = styled.button`
 
 const ResetButton = styled.button`
   color: white;
+  box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.25);
   background-color: red;
   font-size: 0.9rem;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   border-radius: 2px;
   font-style: oblique;
-  width: 100px;
+  width: 150px;
   height: 25px;
   padding: 5px;
   border: none;
+  display: block;
+  margin: 0px auto 25px auto;
 `;
 
 export { AdminButton, AddToCartButton, ResetButton };
