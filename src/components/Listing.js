@@ -25,7 +25,7 @@ class Listing extends Component {
   }
 
   handleClickIncrement = (event) => {
-    if ( this.props.details.status != "Out of Stock") {
+    if ( this.props.details.status !== "Out of Stock") {
       const price = event.currentTarget.value
       const name = event.currentTarget.name
       this.setState({count: this.state.count + 1 }, () => this.addToCart(price, name));
@@ -35,7 +35,7 @@ class Listing extends Component {
   }
 
   handleClickDecrement = (event) => {
-    if (this.state.count > 0 && this.props.details.status != "Out of Stock") {
+    if (this.state.count > 0 && this.props.details.status !== "Out of Stock") {
       const price = event.currentTarget.value
       const name = event.currentTarget.name
       this.setState({count: this.state.count - 1 }, () => this.addToCart(price, name));
