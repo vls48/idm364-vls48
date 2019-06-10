@@ -60,14 +60,14 @@ const ListingStyle = styled.div`
       color: rgba(255,255,255, 0.75);
     }
     p{
-      margin: 15px 10px 20px 15px;
-      font-size: 1rem;
-      font-weight: 500;
+      margin: 15px 10px 15px 15px;
+      font-size: 0.8rem;
+      font-weight: 300;
       text-shadow: 1px 1px 2px rgba(35,0,0,0.95);
     }
   }
   .gradient{
-    background-image: linear-gradient(rgb(255,0,0, 0.2), rgba(100,0,0,0.65), rgba(35,0,0,0.95));
+    background-image: linear-gradient(rgb(255,0,0, 0.3), rgba(105,0,0,0.65), rgba(75,0,0,0.98));
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;

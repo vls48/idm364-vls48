@@ -25,15 +25,17 @@ class Listing extends Component {
   }
 
   handleClickIncrement = (event) => {
-    const price = event.currentTarget.value
-    const name = event.currentTarget.name
-    this.setState({count: this.state.count + 1 }, () => this.addToCart(price, name));
-    let cost = price * 1
-    this.props.setTotal(cost)
+    if ( this.props.details.status != "Out of Stock") {
+      const price = event.currentTarget.value
+      const name = event.currentTarget.name
+      this.setState({count: this.state.count + 1 }, () => this.addToCart(price, name));
+      let cost = price * 1
+      this.props.setTotal(cost)
+    }
   }
 
   handleClickDecrement = (event) => {
-    if (this.state.count > 0) {
+    if (this.state.count > 0 && this.props.details.status != "Out of Stock") {
       const price = event.currentTarget.value
       const name = event.currentTarget.name
       this.setState({count: this.state.count - 1 }, () => this.addToCart(price, name));

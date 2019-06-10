@@ -49,8 +49,8 @@ class AdminListing extends Component {
               onChange={this.handleChange}
               value={this.props.sign.status}
             >
-              <option value="active">Active</option>
-              <option value="inactive">Inactive</option>
+              <option value="In Stock">In Stock</option>
+              <option value="Out of Stock">Out of Stock</option>
             </select>
           </div>
           <div className="controlgroup">
